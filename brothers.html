@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and styles go here -->
+</head>
+<body>
+    <!-- Header and navigation go here -->
+    
+    <!-- Hero image section goes here -->
+    
+    <!-- Intro section goes here -->
+    
+    <!-- Brothers section -->
+    <div class="brothers-section">
+        <h2>Meet Our Brothers</h2>
+        <div class="brothers-grid">
+            <div class="brother-card" onclick="showDescription('brother1')">
+                <img src="brother1.jpg" alt="Brother 1">
+                <h3>John Doe</h3>
+            </div>
+            <div class="brother-card" onclick="showDescription('brother2')">
+                <img src="brother2.jpg" alt="Brother 2">
+                <h3>Jane Smith</h3>
+            </div>
+            <!-- Add more brother cards as needed -->
+        </div>
+    </div>
+    
+    <!-- Description overlay -->
+    <div id="brother-description-overlay" class="description-overlay">
+        <div class="description-content">
+            <span class="close-btn" onclick="hideDescription()">&times;</span>
+            <h2 id="brother-name"></h2>
+            <p id="brother-desc"></p>
+        </div>
+    </div>
+    
+    <!-- Footer goes here -->
+    
+    <!-- JavaScript for showing/hiding descriptions -->
+    <script>
+        function showDescription(brotherId) {
+            var overlay = document.getElementById('brother-description-overlay');
+            var nameElement = document.getElementById('brother-name');
+            var descElement = document.getElementById('brother-desc');
+            
+            if (brotherId === 'brother1') {
+                nameElement.textContent = 'John Doe';
+                descElement.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+            } else if (brotherId === 'brother2') {
+                nameElement.textContent = 'Jane Smith';
+                descElement.textContent = 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.';
+            }
+            
+            overlay.style.display = 'block';
+        }
+        
+        function hideDescription() {
+            var overlay = document.getElementById('brother-description-overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
