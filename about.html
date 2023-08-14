@@ -58,11 +58,12 @@
         .navbar a:hover {
             background-color: #26275D;
             color: #EFAD26;
+            border-radius: 15;
         }
         
         /* Hero Image */
         .hero-image {
-            background-image: url('hero-image.jpg');
+            background-image: url('images/Delta_Kappa_Epsilon_New_1925-1934.jpg');
             background-size: cover;
             height: 500px;
             display: flex;
@@ -87,14 +88,53 @@
             text-align: center;
             background-color: #fff;
         }
-        
-        /* Calendar Section */
-        .values {
+        .intro2 {
             padding: 3rem;
             text-align: center;
             background-color: #26275D;
             color: #fff;
         }
+        
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .value-card {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .value-card:hover {
+            background-color: #EFAD26;
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .value-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .value-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .value-card.active .value-description {
+            display: block;}
         
         /* Footer */
         .footer {
@@ -123,6 +163,16 @@
             }
         }
     </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const valueCards = document.querySelectorAll(".value-card");
+            valueCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    card.classList.toggle("active");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="header">
@@ -148,22 +198,207 @@
     </div>
     
     <div class="intro">
-        <h2>About Us</h2>
+        <h2>Our Mission</h2>
         <p>Delta Kappa Epsilon is an organization that is built on the bonds of brotherhood, pride in the fraternity, and support for one another. The mission of Delta Kappa Epsilon fraternity is to develop in men a social consciousness and a commitment to think and act for the greater good. The Objects of Delta Kappa Epsilon are as follows: "The cultivation of general literature and social culture, the advancement and encouragement of intellectual excellence, the promotion of honorable friendship and useful citizenship, the development of a spirit of tolerance and respect for the rights and views of others, the maintenance of gentlemanly dignity, self-respect, and morality in all circumstances, and the union of stout hearts and kindred interests to secure, to merit its due reward."</p>
     </div>
-    
-    <div class="values">
-        <h3>Our Mission</h3>
-        <p>To empower our members to excel academically, lead ethically, and positively impact their communities.</p>
-        
-        <h3>Our Vision</h3>
-        <p>To be a fraternity that inspires personal growth, meaningful connections, and a legacy of excellence.</p>
+    <div class="intro2">
+        <h2>Our Values</h2>
       
+    </div>
+    
+    <div class="values-container">
+    
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Brotherhood</div>
+            <div class="value-description">
+                Foster a strong sense of unity, camaraderie, and lifelong connections among members.
+                <br><br>
+                Upholding Actions:<br>
+                - Big Brother Mentorship<br>
+                - Regular Bonding Events<br>
+                - Alumni Involvement
+            </div>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🔒</div>
+            <div class="value-name">Integrity</div>
+            <div class="value-description">
+                Uphold the highest standards of honesty, accountability, and ethical conduct.
+                <br><br>
+                Upholding Actions:<br>
+                - Ethics Workshops<br>
+                - Code of Conduct<br>
+                - Accountability Partners
+            </div>
+        </div>
+
+        <!-- Respect -->
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Respect</div>
+            <div class="value-description">
+                Value and embrace diverse perspectives, treating every individual with respect and dignity.
+                <br><br>
+                Upholding Actions:<br>
+                - Rules Surrounding Inclusion<br>
+                - Incident Addressing<br>
+                - Zero-Tolerance Policy
+            </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="value-card">
+            <div class="value-icon">🎓</div>
+            <div class="value-name">Leadership</div>
+            <div class="value-description">
+                Strive to develop confident and responsible leaders who contribute positively to the fraternity and the greater Indiana University community.
+                <br><br>
+                Upholding Actions:<br>
+                - Leadership Workshops<br>
+                - Community Involvement
+            </div>
+        </div>
+
+        <!-- Academic Excellence -->
+        <div class="value-card">
+            <div class="value-icon">📚</div>
+            <div class="value-name">Academic Excellence</div>
+            <div class="value-description">
+                Emphasize the importance of education and intellectual growth.
+                <br><br>
+                Upholding Actions:<br>
+                - Study Groups<br>
+                - Academic Achievement Awards
+            </div>
+        </div>
+
+        <!-- Service and Philanthropy -->
+        <div class="value-card">
+            <div class="value-icon">🤲</div>
+            <div class="value-name">Service and Philanthropy</div>
+            <div class="value-description">
+                Give back to the community through meaningful service projects and philanthropic initiatives.
+                <br><br>
+                Upholding Actions:<br>
+                - Regular Service Events<br>
+                - Philanthropic Campaigns<br>
+                - Partnerships with Nonprofits
+            </div>
+        </div>
+
+        <!-- Inclusivity -->
+        <div class="value-card">
+            <div class="value-icon">🌍</div>
+            <div class="value-name">Inclusivity</div>
+            <div class="value-description">
+                Create an environment where all members feel valued, included, and empowered to contribute their unique strengths and ideas.
+                <br><br>
+                Upholding Actions:<br>
+                - Diversity and Inclusion Training<br>
+                - Open Feedback Channels<br>
+                - Inclusive Programming
+            </div>
+        </div>
+        <!-- Personal Growth -->
+        <div class="value-card">
+            <div class="value-icon">🌱</div>
+            <div class="value-name">Personal Growth</div>
+            <div class="value-description">
+                Provide opportunities for personal development, self-discovery, and skill-building.
+                <br><br>
+                Upholding Actions:<br>
+                - Skill Workshops<br>
+                - Leadership Development Plans
+            </div>
+        </div>
+
+        <!-- Responsible Social Engagement -->
+        <div class="value-card">
+            <div class="value-icon">🍻</div>
+            <div class="value-name">Responsible Social Engagement</div>
+            <div class="value-description">
+                Promote responsible decision-making in social activities, emphasizing safety, respect, and well-being.
+                <br><br>
+                Upholding Actions:<br>
+                - Safety Guidelines<br>
+                - Designated Drivers<br>
+                - Alcohol Education
+            </div>
+        </div>
+
+        <!-- Community Engagement -->
+        <div class="value-card">
+            <div class="value-icon">🏢</div>
+            <div class="value-name">Community Engagement</div>
+            <div class="value-description">
+                Actively engage with the broader campus and local community, building positive relationships and being contributing members of society.
+                <br><br>
+                Upholding Actions:<br>
+                - Collaborative Events<br>
+                - Local Outreach<br>
+                - Community Cleanup
+            </div>
+        </div>
+
+        <!-- Tradition and Innovation -->
+        <div class="value-card">
+            <div class="value-icon">🏛️</div>
+            <div class="value-name">Tradition and Innovation</div>
+            <div class="value-description">
+                Honor the fraternity's rich history while embracing innovation and adaptability.
+                <br><br>
+                Upholding Actions:<br>
+                - Legacy Celebrations<br>
+                - Technology Utilization
+            </div>
+        </div>
+
+        <!-- Wellness -->
+        <div class="value-card">
+            <div class="value-icon">💪</div>
+            <div class="value-name">Wellness</div>
+            <div class="value-description">
+                Prioritize the physical, mental, and emotional well-being of members.
+                <br><br>
+                Upholding Actions:<br>
+                - Organized Group Fitness<br>
+                - Supportive Environment
+            </div>
+        </div>
+        <!-- Repeat for other core values -->
     </div>
     <div class="intro">
         <h2>Our History</h2>
+        <p>Delta Kappa Epsilon was founded on June 22, 1844,[1] in room number twelve in the corner of Old South Hall on the campus of Yale College in New Haven, Connecticut. The fifteen founders were:[1] William Woodruff Atwater, Dr. Edward Griffin Bartlett, Frederic Peter Bellinger, Jr., Henry Case, Colonel George Foote Chester, John Butler Conyngham, Thomas Isaac Franklin, William Walter Horton, The Honorable William Boyd Jacobs, Professor Edward VanSchoonhoven Kinsley, Chester Newell Righter, Dr. Elisha Bacon Shapleigh, Thomas DuBois Sherwood, Albert Everett Stetson, and Orson William Stow. At this meeting, the Fraternity's secret and open Greek mottos were devised, as were the lapel pin design and secret grip. The open motto becoming – "Kerothen Philoi Aei" – "Friends From The Heart, Forever."</p>
         
     </div>
+    <div class="intro2">
+        <h2>Notable Alumni</h2>
+        <div class="alumni-category">
+            <h3>United States Presidents</h3>
+            <p>Rutherford B. Hayes, Kenyon<br>
+                Theodore Roosevelt, Harvard<br>
+                Gerald Ford, Michigan<br>
+                George H. W. Bush, Yale<br>
+                George W. Bush, Yale<br>
+                Franklin D. Roosevelt, Harvard</p>
+        </div>
+        
+        <div class="alumni-category">
+            <h3>United States Vice Presidents</h3>
+            <p>Dan Quayle, DePauw<br>
+                Theodore Roosevelt, Harvard<br>
+                Gerald Ford, Michigan<br>
+                George H. W. Bush, Yale</p>
+        </div>
+        
+        <div class="alumni-category">
+            <h3>Other Notable Alumni</h3>
+            <p>Many American and Canadian politicians, businessmen, sports figures, and artists have been members, including Joe Paterno, Herb Kelleher, J.P. Morgan, Jr., William Randolph Hearst, Cole Porter, Brett Kavanaugh, Ron DeSantis, Bradley Palmer, Henry Cabot Lodge, Dick Clark, Tom Landry, David Milch, and George Steinbrenner. ΔΚΕ flags were carried to the North Pole by its discoverer, Admiral Robert Peary, and to the Moon by astronaut Alan Bean.</p>
+        </div>
+    </div>
+    
     <div class="footer">
         <p>DKE IU 2023 Copyright</p>
         <p><a href="faq.html">FAQ</a> | <a href="https://www.instagram.com/dkeindiana/" target="_blank">Instagram</a></p>

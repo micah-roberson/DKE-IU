@@ -1,37 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and styles go here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Kappa Epsilon</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #26275D;
+            color: #444;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #FFF;
+            color: #26275D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 50px; /* Adjust the height as needed */
+            margin-right: 10px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: #26275D;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .navbar a:hover {
+            background-color: #26275D;
+            color: #EFAD26;
+            border-radius: 15;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        /* Intro Section */
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFF;
+            border: 2px solid #26275D;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+    cursor: pointer;
+    background-color: #26275D;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.question:hover {
+    background-color: #EFAD26;
+    transform: scale(1.05);
+}
+
+        .answer {
+            display: none;
+            padding: 10px;
+            background-color: #FFF;
+            border: 1px solid #26275D;
+            border-radius: 5px;
+        }
+
+        .active {
+            display: block;
+        }
+        
+        /* Calendar Section */
+        .values {
+            padding: 3rem;
+            text-align: center;
+            background-color: #26275D;
+            color: #fff;
+        }
+        
+        /* Footer */
+        .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: #BD252D;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    border-radius: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #EFAD26;
+}
+        
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .navbar {
+                overflow: auto;
+            }
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .card img {
+            max-width: 100px;
+            border-radius: 50%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const questions = document.querySelectorAll(".question");
+            questions.forEach((question) => {
+                question.addEventListener("click", () => {
+                    question.nextElementSibling.classList.toggle("active");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-    <!-- Header and navigation go here -->
-    
-    <!-- Hero image section goes here -->
-    
-    <!-- Intro section goes here -->
-    
-    <!-- FAQ section -->
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <h3>Question 1: What is Delta Kappa Epsilon?</h3>
-            <p>Delta Kappa Epsilon is a premier frat dedicated to fostering lifelong bonds and personal development.</p>
+    <div class="header">
+        <h1>
+            <img src="images/crest.jpeg" alt="DKE Crest" />
+            Delta Kappa Epsilon</h1>
+        <div class="navbar">
+            <a href="about.html">About</a>
+            <a href="brothers.html">Brothers</a>
+            <a href="donate.html">Donate</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="merch.html">Merch</a>
+            <a href="Rush.html">Rush</a>
+            <a href="signin.html">myDKE</a>
         </div>
-        
-        <div class="faq-item">
-            <h3>Question 2: How can I become a member?</h3>
-            <p>Membership requirements and the application process can be found on our <a href="about.html">About</a> page.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h3>Question 3: Do you have any upcoming events?</h3>
-            <p>Yes, you can find a list of our upcoming events on our <a href="calendar.html">Calendar</a> page.</p>
-        </div>
-        
-        <!-- Add more FAQ items as needed -->
     </div>
     
-    <!-- Footer goes here -->
+    <div class="hero-image">
+        <div class="hero-content">
+            <h2>Commenly Asked Questions</h2>
+            <p>Delta Kappa Epsilon | Delta Psi</p>
+        </div>
+    </div>
+    
+     <!-- Faq Section -->
+     <div class="intro">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        
+        <div class="faq-item">
+            <div class="question">What is Delta Kappa Epsilon (DKE)?</div>
+            <div class="answer">
+                Delta Kappa Epsilon, often referred to as “Deke”, is a prominent and historic fraternity founded on principles of brotherhood, leadership, and community impact. With chapters across various campuses, DKE is committed to fostering personal growth, meaningful connections, and positive change.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="question">How can I join DKE?</div>
+            <div class="answer">
+                If you're interested in joining DKE, we encourage you to reach out to our recruitment chairman, Dalijah Marks (ddmarks@iu.edu), or our general email (DKE.DeltaPsi.IU@gmail.com), for information about the recruitment process, membership requirements, and upcoming events.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="question">Is diversity and equity important to DKE?</div>
+            <div class="answer">
+                Absolutely. DKE is committed to creating an inclusive environment that values individuals from all backgrounds. We celebrate different perspectives and work towards fostering a culture of respect and unity.
+            </div>
+        </div>
+           
+                <div class="faq-item">
+                    <div class="question">What events and activities does DKE offer?</div>
+                    <div class="answer">
+                        DKE chapters host a variety of events and activities, including brotherhood gatherings, community service initiatives, leadership workshops, social events, and philanthropic campaigns. These activities provide opportunities for personal growth, networking, and making a positive impact.                    </div>
+                    </div>
+                
+               
+
+<div class="faq-item">
+    <div class="question">What opportunities for leadership are available in DKE?</div>
+    <div class="answer">
+        DKE offers various leadership roles within the chapter, ranging from executive board positions to committee chairs. These roles provide hands-on experience in areas such as organization, management, event planning, and more.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="question">What benefits does DKE offer for personal development?</div>
+    <div class="answer">
+        Joining DKE can lead to personal growth in numerous ways. From building lifelong friendships to enhancing leadership skills, honing time management, and developing a strong sense of responsibility, DKE provides a supportive environment for individual development.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="question">How can I stay connected with DKE after graduation?</div>
+    <div class="answer">
+        DKE's strong alumni network offers opportunities to stay connected with your fraternity brothers, mentor current members, and contribute to the ongoing success of DKE chapters. Alumni often engage in networking events, chapter support, and mentoring initiatives.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="question">What is the history of DKE?</div>
+    <div class="answer">
+        DKE was founded in 1844 at Yale University and has a rich legacy of producing notable alumni who have made significant contributions in various fields. The fraternity has a longstanding tradition of promoting brotherhood, leadership, and community involvement.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="question">How can I get in touch with DKE?</div>
+    <div class="answer">
+        For inquiries or more information, please feel free to reach out to us at DKE.DeltaPsi.IU@Gmail.com or fill out our contact form. We'd be happy to assist you!
+    </div>
+</div>
+
+<div class="intro">
+    <p>We hope these FAQs have provided you with valuable information about Delta Kappa Epsilon. If you have any more questions or need further assistance, please don't hesitate to get in touch with us. We're excited to welcome you into the DKE community!</p>
+</div>
+
+<!-- ... Rest of the content ... -->
+
+
+    
+    <div class="footer">
+        <p>DKE IU 2023 Copyright</p>
+        <p><a href="faq.html">FAQ</a> | <a href="https://www.instagram.com/dkeindiana/" target="_blank">Instagram</a></p>
+    </div>
 </body>
 </html>

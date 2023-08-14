@@ -21,7 +21,8 @@
         /* Header */
         .header {
             background-color: #FFF;
-            color: #26275D;
+            color:#26275D;
+           
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,6 +50,7 @@
             float: left;
             display: block;
             color: #26275D;
+            border-radius: 15px;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -58,29 +60,38 @@
         .navbar a:hover {
             background-color: #26275D;
             color: #EFAD26;
+            border-radius: 15px;
         }
         
-        /* Hero Image */
-        .hero-image {
-            background-image: url('hero-image.jpg');
-            background-size: cover;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-        
+       .hero-image {
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Adjust the height as needed */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 800px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
         /* Intro Section */
         .intro {
             padding: 3rem;
@@ -95,6 +106,46 @@
             background-color: #26275D;
             color: #fff;
         }
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .value-card {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .value-card:hover {
+            background-color: #EFAD26;
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .value-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .value-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .value-card.active .value-description {
+            display: block;}
         .rush {
             padding: 3rem;
             text-align: center;
@@ -145,13 +196,86 @@
                 overflow: auto;
             }
         }
+        .banner {
+    position: absolute; /* Change from 'fixed' to 'absolute' */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999; /* Bring the banner to the front */
+}
+
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    color: #EFAD26;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.banner-line {
+    margin: 0;
+    line-height: 1;
+    animation: moveUp 1.5s infinite alternate, moveLeft 1.5s infinite alternate;
+}
+
+@keyframes moveUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+}
+
+
     </style>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const valueCards = document.querySelectorAll(".value-card");
+            valueCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    card.classList.toggle("active");
+                });
+            });
+        });
+    </script>
 </head>
+
 <body>
+    <div class="banner" id="banner">
+        <img style="height: 300px;"src="images/Delta_Kappa_Epsilon_Coat_of_Arms.png" alt="DKE Crest" class="banner-image" />
+        <div class="banner-text">
+            <p class="banner-line">Indiana University's</p>
+            <p class="banner-line">Delta Kappa Epsilon</p>
+        </div>
+    </div>
+    
     <div class="header">
         <h1 >
             <img src="images/crest.jpeg" alt="DKE Crest" />
-            Delta Kappa Epsilon</h1>
+            ΔKE</h1>
         <div class="navbar">
             <a href="about.html">About</a>
             <a href="brothers.html">Brothers</a>
@@ -164,6 +288,10 @@
     </div>
     
     <div class="hero-image">
+        <video autoplay loop muted class="hero-video">
+            <source src="Indiana University by drone.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-content">
             <h2>Welcome to IU's Delta Kappa Epsilon</h2>
             <p>Delta Psi Chapter</p>
@@ -175,9 +303,59 @@
         <p>Delta Kappa Epsilon is a premier frat dedicated to fostering lifelong bonds and personal development.</p>
     </div>
     
-    <div class="values">
-        <h2>Our Values</h2>
-       
+    <div class="values-container">
+    
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Brotherhood</div>
+            <div class="value-description">
+                Foster a strong sense of unity, camaraderie, and lifelong connections among members.
+                <br><br>
+                Upholding Actions:<br>
+                - Big Brother Mentorship<br>
+                - Regular Bonding Events<br>
+                - Alumni Involvement
+            </div>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🔒</div>
+            <div class="value-name">Integrity</div>
+            <div class="value-description">
+                Uphold the highest standards of honesty, accountability, and ethical conduct.
+                <br><br>
+                Upholding Actions:<br>
+                - Ethics Workshops<br>
+                - Code of Conduct<br>
+                - Accountability Partners
+            </div>
+        </div>
+
+        <!-- Respect -->
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Respect</div>
+            <div class="value-description">
+                Value and embrace diverse perspectives, treating every individual with respect and dignity.
+                <br><br>
+                Upholding Actions:<br>
+                - Rules Surrounding Inclusion<br>
+                - Incident Addressing<br>
+                - Zero-Tolerance Policy
+            </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="value-card">
+            <div class="value-icon">🎓</div>
+            <div class="value-name">Leadership</div>
+            <div class="value-description">
+                Strive to develop confident and responsible leaders who contribute positively to the fraternity and the greater Indiana University community.
+                <br><br>
+                Upholding Actions:<br>
+                - Leadership Workshops<br>
+                - Community Involvement
+            </div>
+        </div>
     </div>
     <div class="rush">
         <h2>interested in becoming DKE?</h2>
@@ -196,5 +374,16 @@
         <p>DKE IU 2023 Copyright</p>
         <p><a href="faq.html">FAQ</a> | <a href="https://www.instagram.com/dkeindiana/" target="_blank">Instagram</a></p>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const banner = document.getElementById('banner');
+            banner.style.opacity = '1';
+            banner.style.pointerEvents = 'auto'; // Enable interaction with the banner
+            setTimeout(() => {
+                banner.style.opacity = '0';
+                banner.style.pointerEvents = 'none'; // Disable interaction again
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
