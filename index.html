@@ -14,27 +14,41 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f2f2f2;
+            background-color: #26275D;
+            color: #444;
         }
         
         /* Header */
         .header {
-            background-color: #2a3b4c;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
+            background-color: #FFF;
+            color: #26275D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 50px; /* Adjust the height as needed */
+            margin-right: 10px;
         }
         
         /* Navigation */
         .navbar {
-            background-color: #1a2b3c;
+            background-color: #fff;
             overflow: hidden;
         }
         
         .navbar a {
             float: left;
             display: block;
-            color: #f2f2f2;
+            color: #26275D;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -42,8 +56,8 @@
         }
         
         .navbar a:hover {
-            background-color: #ffd700;
-            color: #1a2b3c;
+            background-color: #26275D;
+            color: #EFAD26;
         }
         
         /* Hero Image */
@@ -75,29 +89,56 @@
         }
         
         /* Calendar Section */
-        .calendar {
+        .values {
             padding: 3rem;
             text-align: center;
-            background-color: #f2f2f2;
+            background-color: #26275D;
+            color: #fff;
+        }
+        .rush {
+            padding: 3rem;
+            text-align: center;
+            background-color: #444;
+            color: #fff;
         }
         
         /* Footer */
         .footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #1a2b3c;
-            color: #fff;
-        }
-        
-        .footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: #BD252D;
+    color: #fff;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+/* Add this CSS to your existing styles */
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #FFF;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+    border-radius: 15px;
+}
+
+.custom-button:hover {
+    background-color: #FFF;
+    color: #26275D;
+    transform: translate(0, -2px);
+}
+
+.footer a:hover {
+    color: #EFAD26;
+}
         /* Responsive layout */
         @media (max-width: 768px) {
             .navbar {
@@ -108,23 +149,24 @@
 </head>
 <body>
     <div class="header">
-        <h1>Delta Kappa Epsilon</h1>
-    </div>
-    
-    <div class="navbar">
-        <a href="#">About</a>
-        <a href="#">Brothers</a>
-        <a href="#">Donate</a>
-        <a href="#">Calendar</a>
-        <a href="#">Merch</a>
-        <a href="#">Rush</a>
-        <a href="#">Sign In</a>
+        <h1 >
+            <img src="images/crest.jpeg" alt="DKE Crest" />
+            Delta Kappa Epsilon</h1>
+        <div class="navbar">
+            <a href="about.html">About</a>
+            <a href="brothers.html">Brothers</a>
+            <a href="donate.html">Donate</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="merch.html">Merch</a>
+            <a href="Rush.html">Rush</a>
+            <a href="signin.html">myDKE</a>
+        </div>
     </div>
     
     <div class="hero-image">
         <div class="hero-content">
-            <h2>Welcome to Delta Kappa Epsilon</h2>
-            <p>We're a brotherhood dedicated to excellence, friendship, and growth.</p>
+            <h2>Welcome to IU's Delta Kappa Epsilon</h2>
+            <p>Delta Psi Chapter</p>
         </div>
     </div>
     
@@ -133,13 +175,26 @@
         <p>Delta Kappa Epsilon is a premier frat dedicated to fostering lifelong bonds and personal development.</p>
     </div>
     
-    <div class="calendar">
-        <h2>Upcoming Events</h2>
-        <!-- Add your Google Calendar embed code here -->
+    <div class="values">
+        <h2>Our Values</h2>
+       
     </div>
-    
+    <div class="rush">
+        <h2>interested in becoming DKE?</h2>
+        <p>Click the button below to get more information from our chapter at Indiana University</p>
+        <a href="Rush.html" class="custom-button">Rush DKE</a>
+    </div>
+    <div class="intro">
+        <h2>Upcoming events</h2>
+        
+        <!-- Add your Google Calendar embed code here -->
+        <!-- Example embed code (replace with your actual code) -->
+        <iframe src="https://www.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+     
+    </div>
     <div class="footer">
-        <p><a href="#">FAQ</a></p>
+        <p>DKE IU 2023 Copyright</p>
+        <p><a href="faq.html">FAQ</a> | <a href="https://www.instagram.com/dkeindiana/" target="_blank">Instagram</a></p>
     </div>
 </body>
 </html>

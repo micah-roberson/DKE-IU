@@ -1,101 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and styles go here -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Kappa Epsilon</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #26275D;
+            color: #444;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #FFF;
+            color: #26275D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 50px; /* Adjust the height as needed */
+            margin-right: 10px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: #26275D;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .navbar a:hover {
+            background-color: #26275D;
+            color: #EFAD26;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        /* Intro Section */
+        .intro {
+            padding: 3rem;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        /* members-section */
+        .members-section {
+            padding: 3rem;
+            text-align: center;
+            background-color: #fff;
+            color: #26275D;
+        }
+        .auth-container {
+            padding: 3rem;
+            text-align: center;
+            background-color: #fff;
+            color: #26275D;
+            flex-direction: column;
+        }
+        /* Footer */
+        .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: #BD252D;
+    color: #fff;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #EFAD26;
+}
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .navbar {
+                overflow: auto;
+            }
+        }
+    </style>
+     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+     <script src="firebase.js"></script>
+     <script src="script.js"></script>
 </head>
 <body>
-    <!-- Header and navigation go here -->
+    <div class="header">
+        <h1>
+            <img src="images/crest.jpeg" alt="DKE Crest" />
+            Delta Kappa Epsilon</h1>
+        <div class="navbar">
+            <a href="about.html">About</a>
+            <a href="brothers.html">Brothers</a>
+            <a href="donate.html">Donate</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="merch.html">Merch</a>
+            <a href="Rush.html">Rush</a>
+            <a href="signin.html">myDKE</a>
+        </div>
+    </div>
     
-    <!-- Hero image section goes here -->
-    
-    <!-- Intro section goes here -->
+    <div class="hero-image">
+        <div class="hero-content">
+            <h2>My DKE Beta(notworking)</h2>
+            <p>Page for current DKE Memebers</p>
+        </div>
+    </div>
     
     <!-- Members section -->
     <div class="members-section">
         <h2>Members Only</h2>
-        
-        <!-- Firebase Authentication -->
-        <div id="auth-container">
-            <h3>Sign In or Create an Account</h3>
-            <input type="email" id="email" placeholder="Email" />
-            <input type="password" id="password" placeholder="Password" />
-            <button onclick="signInOrCreate()">Sign In or Create Account</button>
-            <p id="auth-message"></p>
+        <h1>Poop Website</h1>
+        <div id="register-container">
+          <h2>Create an Account</h2>
+          <input type="email" id="reg-email" placeholder="Email"><br>
+          <input type="password" id="reg-password" placeholder="Password"><br>
+          <button id="register-btn">Register</button>
         </div>
-        
-        <!-- Content for authenticated users -->
-        <div id="content-container" style="display: none;">
-            <h3>Member-Only Content</h3>
-            <p>This content is only visible to authenticated members.</p>
-            
-            <!-- Passcode form -->
-            <div id="passcode-form">
-                <h3>Enter Passcode</h3>
-                <input type="text" id="passcode" placeholder="Enter Passcode" />
-                <button onclick="checkPasscode()">Submit</button>
-            </div>
+        <div id="login-container">
+          <h2>Login</h2>
+          <input type="email" id="email" placeholder="Email"><br>
+          <input type="password" id="password" placeholder="Password"><br>
+          <button id="login-btn">Login</button>
         </div>
+        <div id="poop-container" style="display: none;">
+          <h2>Welcome! Here's the word: Poop</h2>
+        </div>
+  
     </div>
     
-    <!-- Include Firebase SDK and scripts go here -->
-    
-    <script>
-        // Firebase Authentication and Realtime Database code goes here
-        
-        function signInOrCreate() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    document.getElementById('auth-message').textContent = "Authentication successful!";
-                    showMemberContent();
-                })
-                .catch((error) => {
-                    if (error.code === 'auth/user-not-found') {
-                        createAccount(email, password);
-                    } else {
-                        document.getElementById('auth-message').textContent = "Authentication failed.";
-                    }
-                });
-        }
-        
-        function createAccount(email, password) {
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    document.getElementById('auth-message').textContent = "Account created and signed in!";
-                    showMemberContent();
-                })
-                .catch((error) => {
-                    document.getElementById('auth-message').textContent = "Account creation failed.";
-                });
-        }
-        
-        function showMemberContent() {
-            document.getElementById('auth-container').style.display = 'none';
-            document.getElementById('content-container').style.display = 'block';
-            document.getElementById('passcode-form').style.display = 'block';
-        }
-        
-        function checkPasscode() {
-            const passcodeInput = document.getElementById('passcode').value;
-            
-            passcodeRef.once('value')
-                .then((snapshot) => {
-                    const storedPasscode = snapshot.val();
-                    if (passcodeInput === storedPasscode) {
-                        // Show the content accessible only to authenticated users with the correct passcode
-                        alert('Access granted! Display more member content here.');
-                    } else {
-                        alert('Incorrect passcode. Access denied.');
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error fetching passcode:", error);
-                });
-        }
-    </script>
-    
-    <!-- Footer goes here -->
+    <div class="footer">
+        <p>DKE IU 2023 Copyright</p>
+        <p><a href="faq.html">FAQ</a> | <a href="https://www.instagram.com/dkeindiana/" target="_blank">Instagram</a></p>
+    </div>
 </body>
 </html>
