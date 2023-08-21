@@ -169,22 +169,39 @@
     color: inherit; /* Inherit color from parent element */
     text-decoration: none;
 }
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #26275D;
+    color: #26275D;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+    border-radius: 15px;
+}
 
+.custom-button:hover {
+    background-color: #26275D;
+    color: #fff;
+    transform: translate(0, -2px);
+}
 
     </style>
 </head>
 <body>
     <div class="header">
+   
         <h1>
             <img src="images/crest.jpeg" alt="DKE Crest" />
             Delta Kappa Epsilon</h1>
         <div class="navbar">
             <a href="about.html">About</a>
             <a href="brothers.html">Brothers</a>
-       
+           
             <a href="calendar.html">Calendar</a>
             <a href="merch.html">Merch</a>
             <a href="Rush.html">Rush</a>
+            <a href="media.html">Media</a>
     
         </div>
     </div>
@@ -245,7 +262,11 @@
     </div>
 </div>
 
-
+<div class="values">
+    <h2>Want More</h2>
+    <p>Here is the official Website.</p>
+    <a href="https://shopdke.com/" class="custom-button">ShopDKE</a>
+</div>
     
 <div class="footer">
     <p>DKEDELTAPSI 2023 Copyright</p>
