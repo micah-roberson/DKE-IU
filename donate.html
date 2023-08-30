@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/crest.jpeg">
     <title>Delta Kappa Epsilon</title>
     <style>
         /* Reset some default styles */
         body, h1, h2, p {
             margin: 0;
             padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             background-color: #26275D;
             color: #444;
@@ -23,16 +25,53 @@
             background-color: #FFF;
             color: #26275D;
             display: flex;
+            font-weight:600;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .header h1 {
             margin: 0;
             display: flex;
             align-items: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #26275D;
+    color: #26275D;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+    border-radius: 15px;
+}
+
+.custom-button:hover {
+    background-color: #26275D;
+    color: #fff;
+    transform: translate(0, -2px);
+}
+.custom-button2 {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #FFF;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+    border-radius: 15px;
+}
+
+.custom-button2:hover {
+    background-color: #BD252D;
+    color: #fff;
+    transform: translate(0, -2px);
+}
+        /* Header */
+       
 
         .header img {
             height: 50px; /* Adjust the height as needed */
@@ -53,17 +92,17 @@
             padding: 14px 16px;
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
+            border-radius: 15;
         }
         
         .navbar a:hover {
             background-color: #26275D;
             color: #EFAD26;
-            border-radius: 15;
         }
         
         /* Hero Image */
         .hero-image {
-            background-image: url('images/ph2rx5.jpg');
+            background-image: url('images/Delta_Kappa_Epsilon_New_1925-1934.jpg');
             background-size: cover;
             height: 500px;
             display: flex;
@@ -96,7 +135,16 @@
             background-color: #26275D;
             color: #fff;
         }
-        
+        .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #26275D;
+    color: #26275D;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+    border-radius: 15px;
+}
         /* Footer */
         .footer {
     display: flex;
@@ -124,72 +172,49 @@
                 overflow: auto;
             }
         }
-        .card-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .card img {
-            max-width: 100px;
-            border-radius: 50%;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
     <div class="header">
+       
         <h1>
             <img src="images/crest.jpeg" alt="DKE Crest" />
             Delta Kappa Epsilon</h1>
         <div class="navbar">
             <a href="about.html">About</a>
             <a href="brothers.html">Brothers</a>
-            <a href="donate.html">Donate</a>
+           
             <a href="calendar.html">Calendar</a>
             <a href="merch.html">Merch</a>
             <a href="Rush.html">Rush</a>
-            <a href="signin.html">myDKE</a>
+            <a href="media.html">Media</a>
+            <a href="donate.html">Dontate</a>
+     
         </div>
     </div>
     
     <div class="hero-image">
         <div class="hero-content">
             <h2>Alumni Donation</h2>
-            <p>Delta Kappa Epsilon</p>
+            <p>Delta Kappa Epsilon | Delta Psi</p>
         </div>
     </div>
     
-     <!-- Donation Section -->
-     <div class="intro">
-        <h2>Donate Here</h2>
-        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
-        <script>
-            paypal.Buttons({
-                createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: '10.00' // Set the donation amount here
-                            }
-                        }]
-                    });
-                },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                        alert('Thank you for your donation, ' + details.payer.name.given_name + '!');
-                    });
-                }
-            }).render('#paypal-button-container');
-        </script>
-        <p>If you have any questions, feel free to contact us:</p>
-        <a href="mailto:piwanski@iu.edu" class="contact-button">Contact</a>
+    <div class="intro">
+        <h2>Why Donate</h2>
+        <p>DKE is a relatively small Fraternity when it comes to staff. However the ambition to provide better resources to our members is unrivalled. Donations to the Fraternity itself are not tax deductible, however this allows DKE Delta to spend these funds on a wider array of services for our members including such things as subsidizing their travel to educational events</p>
+        <a href="https://buy.stripe.com/5kA01Q6tkcqM44EbOT" class="custom-button">Give Under $185</a>
+        <a href="https://buy.stripe.com/9AQ3e21908aw8kUcSW" class="custom-button">Give More</a>
     </div>
+    
+    <div class="values">
+        <h2>Our Alumni Newsletter</h2>
+        <p>We release Newsletters each semester</p>
+        <a href="DKE Delta Psi Newsletter 8.16.2023 v4.pdf" class="custom-button2">Newsletter 8.16.2023</a>
 
-
+    </div>
+ 
+   
     
     <div class="footer">
         <p>DKEDELTAPSI 2023 Copyright</p>
@@ -197,5 +222,3 @@
     </div>
 </body>
 </html>
-
-  
